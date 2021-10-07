@@ -33,18 +33,28 @@ class my_stack:
 if __name__ == "__main__":
 
     print(f'please enter the size of the array : ', end='')
-    try:
-        size = int(input())
-    except:
-        print(f'please enter a valid integer : ', end='')
-        size = int(input())
+    flag = True
+    size = None
+    while flag:
+        try:
+            size = int(input())
+            flag = False
+        except:
+            print(f'please enter a valid integer : ', end='')
 
     obj = my_stack(size)
 
     flag = True
     while(flag):
         print('Select an option : \n1. Push into stack\n2. Pop from stack\n3. peek top element\n4. Exit')
-        val = int(input())
+        flag2 = True
+        val = None
+        while flag2:
+            try:
+                val = int(input())
+                flag2 = False
+            except:
+                print('please select a correct option : ')
         if val == 1:
             print('Please enter the value to be pushed : ',end='')
             data = input()
